@@ -1,5 +1,5 @@
 CXX=icpc
-CXXFLAGS=-c -qopenmp
+CXXFLAGS=-c -qopenmp -xMIC-AVX512
 LDFLAGS=-qopenmp
 
 OBJECTS=main.o library.o worker.o

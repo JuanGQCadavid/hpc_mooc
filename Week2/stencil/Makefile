@@ -1,5 +1,5 @@
 CXX=icpc
-CXXFLAGS=-c -qopenmp
+CXXFLAGS=-c -qopenmp -xMIC-AVX512
 LDFLAGS=-qopenmp -lpng
 
 OBJECTS=main.o image.o stencil.o
@@ -13,7 +13,7 @@ run:	all
 	./stencil test-image.png
 
 queue:	all
-	echo 'cd $$PBS_O_WORKDIR ; ./stencil test-image.png' | qsub -l nodes=1:flat -N edgedetection
+	echo 'cd $$PBS_O_WORKDIR ; ./stencil test-image.png' | qsub -l nodes=4:flat -N edgedetection
 
 clean:
 	rm -f *.optrpt *.o stencil *output.png *~ edgedetection.*

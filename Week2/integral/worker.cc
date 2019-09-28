@@ -4,7 +4,7 @@ double ComputeIntegral(const int n, const double a, const double b) {
 
   const double dx = (b - a)/n;
   double I = 0.0;
-
+#pragma omp simd reduction(+: I)
   for (int i = 0; i < n; i++) {
 
     const double xip12 = a + dx*(double(i) + 0.5);

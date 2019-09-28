@@ -1,5 +1,6 @@
 #include <cmath>
 
+#pragma omp declare simd
 double BlackBoxFunction(const double x) {
   return 1.0/sqrt(x);
 }
