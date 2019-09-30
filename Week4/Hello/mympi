@@ -2,5 +2,5 @@
 
 cd $PBS_O_WORKDIR
 
-mpirun -hots localhost -np 2 ./HelloMPI
+mpirun -host localhost -np 2 ./HelloMPI
 
