@@ -4,5 +4,8 @@ all:
 queue: all
 	qsub mympi
 
+mydist: all
+	qsub mydistmpi
+
 clean:
 	rm -rf mympi.*

@@ -10,7 +10,7 @@ int main (int argc, char *argv[]){
     MPI_Get_processor_name(name, &namelen); // Hostname of node
     MPI_Comm_size (MPI_COMM_WORLD, &size); // Number of processes
 
-    printf("Hello Wordl from rank %d running on %s \n",rank,name);
+    printf("Hello Wordl from rank %d running on %s! \n",rank,name);
     if (rank == 0) printf("MPI Wordl size = %d processes \n", size);
     MPI_Finalize(); // Gracely stop, terminate MPI Env
 }
