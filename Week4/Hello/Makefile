@@ -1,5 +1,8 @@
 all:
-	mpiicpc -o HelloMPI hello.cc
+	mpiicpc -o HelloMPI HelloMPI.cc
 
 queue: all
 	qsub mympi
+
+clean:
+	rm -rf mympi.*
